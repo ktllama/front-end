@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Mukta:wght@600&display=swap');
+
 body {
     margin: 0px 0px 0px 0px;
   }
@@ -9,7 +11,7 @@ body {
       width: 100%;
       background: rgba(237, 220, 210, 1);
       font-size: 20px;
-      font-family: 'Work Sans', sans-serif;
+      font-family: 'Amatic SC', cursive;
       }
   
   nav ul{
@@ -22,26 +24,27 @@ body {
       display: inline;
       margin-right: 20px;
   }
+  h1 {
+    font-size: 75px;
+  }
   .header {
-      padding-top: 75px;
-      padding-bottom: 60px;
+      padding-top: 50px;
+      padding-bottom: 10px;
       text-align: center;
       width: 100%;
       background-color: rgba(183, 183, 164, 1);
       color: #0D2C40;
-      font-size: 30px;
-      font-family: 'Work Sans', sans-serif;
+      font-family: 'Amatic SC', cursive;
       }
   
   .footer {
-      position: fixed;
       left: 0;
       bottom: 0;
       width: 100%;
       background-color: rgba(183, 183, 164, 1);
       color: #0D2C40;
       text-align: center;
-      font-family: 'Work Sans', sans-serif;
+      font-family: 'Mukta', sans-serif;
       padding-top: 60px;
       padding-bottom: 60px;
       }
@@ -49,6 +52,7 @@ body {
   #logo {
       text-align: center;
       padding-left: 30px;
+      font-family: 'Amatic SC', cursive;
       }
   a {
       text-decoration: none;
@@ -58,5 +62,39 @@ body {
       width: 70%;
           margin-left: auto;
           margin-right: auto;
+  }
+body {
+    background-color: rgba(240, 239, 235, 1);
+    ;
+}
+
+
+    /* text button on pic*/
+.container {
+    position: relative;
+    width: 100%;
+  }
+  
+
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container .btn {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 20px;
+      font-family: 'Amatic SC', cursive;
+    color: rgb(2, 2, 2);
+    font-size: 30px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
   }
   

@@ -40,16 +40,17 @@ class Recipes extends React.Component {
     ////////// Recipes 
     mapRecipes = (r) => {
         return (
-            <div className="col-sm my-2" key={r.id}>
-              <div className="card col-sm" style={{width: "18rem", "borderRadius": "5%" }}>
-                {/* <a href={props.image.mainUrl}> */}
-                <img src={r.image} className="card-img-top img-responsive" alt="..." style={{"borderRadius": "5%" }} />
-                <div className="card-body" style={{"textAlign":"center"}}>
-                    <p>{r.name}</p>
-                    <button type="button" className="btn btn-primary" id={r.id} onClick={this.onSelect}>Show Recipe</button>
-                </div>
-              </div>
-            </div>            
+                    <div className="col-sm my-2" key={r.id}>
+                      <div className="card col-sm" style={{width: "18rem", "borderRadius": "5%" }}>
+                        {/* <a href={props.image.mainUrl}> */}
+                        <img src={r.image} className="card-img-top img-responsive" alt="..." style={{"borderRadius": "5%" }} />
+                        <div className="card-body" style={{"textAlign":"center"}}>
+                            <p>{r.name}</p>
+                            <button type="button" className="btn btn-primary" id={r.id} onClick={this.onSelect}>Show Recipe</button>
+                        </div>
+                      </div>
+                    </div> 
+                             
         )
     }
     onGetRecipesSuccess = (result) => {
@@ -98,11 +99,11 @@ class Recipes extends React.Component {
         let ingredients = r.ingredients.map (this.mapIngredientInto_li);
         return (
             <div>
-                <div className="col d-flex justify-content-center">
-                    <div className="row">
-                    <div className="card" style={{width: "50rem", "borderRadius": "5%" }}>
-                    <img src={r.image} className="card-img-top img-responsive mx-auto" alt="..." style={{width: "33rem", "borderRadius": "5%" }} />
-                    <div className="card-body justify-content-center">
+                <div className="col d-flex justify-content-center text-secondary ">
+                    <div className="row m-3 m-sm-5">
+                    <div className="card p-4 bg-light" style={{"borderRadius": "5%" }}>
+                    <img src={r.image} className="card-img-top img-responsive mx-auto recipe" alt="..." style={{width: "33rem", "borderRadius": "5%" }} />
+                    <div className="card-body recipeName m-4 justify-content-center">
                         <h1 className="card-title">{r.name}</h1>
                         {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
@@ -110,14 +111,27 @@ class Recipes extends React.Component {
                 </div>
             </div>
     </div>
-            <div className="container">     
-                <div className="row content">
-                    <div className="col-sm-6">Ingredients<ul>{ingredients}</ul></div>
-                    <div className="col-sm-6">{r.instructions}</div>
+            <div className="container mt-n4">     
+                <div className="row content justify-content-center m-3 m-sm-4">
+
+                    <div className="col-sm-4 card text-secondary m-4 p-3 white" style={{"borderRadius": "5%" }}>
+                    <h1 className="head p-2 text-center card-title">Ingredients</h1>
+                        <div className="card-body text-light ingredients">
+                            <p className="card-text p-4">{ingredients}</p>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-6 card text-secondary m-4 p-3" style={{"borderRadius": "5%" }}>
+                    <h1 className="card-title">Instructions</h1>
+                        <div className="card-body align-self-center mt-2 cardbody text-light">
+                            <p className="card-text p-4 align-self-center text-big">{r.instructions}</p>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
-            <button type="button" className="btn btn-primary" id={r.id} onClick={this.onClick}>Go Back</button>
-                            </div>
+    </div>
         )
     }
 //////////////////// render ///////////////////

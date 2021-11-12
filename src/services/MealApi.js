@@ -2,6 +2,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from "axios";
 const endpoint = "https://themealdb.com/api/json/v1/1";
+// let recipesCounter = 0;
 
 ///////////////////// Get All Products /////////////////////
 // returns an array of objects
@@ -32,7 +33,7 @@ const createList = (ingredient) => {
 //      image: image of the meal (string)
 // This method returns recipes that contain the first 
 // ingredient in the list of ingredients.
-// Future Work: return recipes that contain only 
+// FUTURE WORK: return recipes that contain only 
 // ingredients that are in the ingredients list
 export const getRecipes = async (ingredients) => {
     let searchIngredient = ingredients[0];
@@ -48,8 +49,12 @@ const getSearchString = (ingredient)=> {
     return ingredient;
 }
 
-const onGetRecipesSuccess = (data) => {
-    return data.data.meals.map (createRecipesList);
+// response.data.map contains all the recipes that contain the
+// first ingredient in the list of products (ingredients).
+// Filter down to recipes that contain only ingredients in 
+// the list of products. 
+const onGetRecipesSuccess = (response) => {
+    return response.data.meals.map (createRecipesList);
 }
 
 const createRecipesList = (recipe) => {
@@ -67,6 +72,8 @@ const createRecipesList = (recipe) => {
 //      instructions: cooking instructions (string)
 //      image: an image of the meal
 //      video: a video detailing how to cook the meal
+// FUTURE WORK: there is an error when calling this function
+// with .then() .error (), an invalid Object on .error. 
 export const getRecipe = async (recipeId) => {
     const path = `${endpoint}/lookup.php?i=${recipeId}`;
     try {
@@ -82,6 +89,7 @@ const onGetRecipeSuccess = (response) => {
     let recipe = response.data.meals[0];
     recipe = formatRecipe (recipe);
     console.log (recipe);
+    return recipe;
 }
 
 const formatRecipe = (recipe) => {
@@ -104,12 +112,16 @@ const createListofIngredients = (r) => {
         const ingredient = `strIngredient${i}`;
         let displayItem = formatIngredient (r[measure], r[ingredient]);
         if (displayItem)
-            ingredients[ingredients.length] = displayItem;
+            ingredients[ingredients.length] = {
+                key: i,
+                ingredient: displayItem
+            }
     }
     return ingredients;
 }
 
 const formatIngredient = (measurement, ingredient) => {
+    
     if (!ingredient || ingredient==="")
         return false;
     else 

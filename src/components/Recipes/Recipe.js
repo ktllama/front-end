@@ -56,7 +56,7 @@ class Recipe extends React.Component {
                     <div className="col-sm-6 card text-secondary m-4 p-3" style={{"borderRadius": "5%" }}>
                     <h1 className="card-title">Instructions</h1>
                         <div className="card-body align-self-center mt-2 cardbody text-light">
-                            <p className="card-text p-4 align-self-center">{r.instructions}</p>
+                            <p className="card-text p-4 align-self-center text-big">{r.instructions}</p>
                         </div>
                     </div>
 

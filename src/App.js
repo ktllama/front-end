@@ -1,13 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  // Link,
+  // useRouteMatch
+} from "react-router-dom";
+import Homepage from "./components/HomePage/HomePage"
+import Recipes from './components/Recipes/Recipes';
+// import Recipe from "./components/Recipes/Recipe"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        This is the Parent component App.js
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>0
+    <Route path="/" element={<Homepage />} />
+      <Route path="/recipes" element={<Recipes />} />
+      {/* <Route path="/recipe:recipeId" element={<Recipe id="52780" />} /> */}
+    </Routes>    
+    </BrowserRouter>
+
   );
 }
 

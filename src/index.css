@@ -5,9 +5,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #DDBEA9;
 }
 
+html{
+  background-color: #DDBEA9;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+div{
+  background-color: #DDBEA9;
+}
+
+
+
+.recipeName{
+  background-color: #CB997E
+  ;
+  color:#FFF1E6;
+  border-radius: 40px;
+  text-align: center;
+  
+}
+
+.cardbody{
+  background-color: #B7B7A4
+  ;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.ingredients{
+  background-color: #B7B7A4
+  ;
+  color:#FFF1E6;
+  border-radius: 20px;
+}
+
+.head{
+  background-color: #A5A58D
+  ;
+  color:white;
+  border:2px solid #a3a377;
+  border-radius: 20px;
 }

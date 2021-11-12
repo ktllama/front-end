@@ -20,7 +20,13 @@ div{
   background-color: #DDBEA9;
 }
 
-
+h2{
+  font-weight: 300;
+  color:white;
+  font-variant: small-caps;
+  font-size: 1rem;
+  display: block;
+}
 
 .recipeName{
   background-color: #CB997E
@@ -51,4 +57,29 @@ div{
   color:white;
   border:2px solid #a3a377;
   border-radius: 20px;
+}
+
+.recipeNameSmall{
+  background-color: #a3a377;
+  color:white;
+  border-radius: 10px;
+  width:100%;
+
+}
+
+.button{
+  font-size: larger;
+  background-color: #CB997E;
+  padding: 7%;
+  color:white;
+  border: white 2px solid;
+  border-radius: 10px;
+
+}
+
+.intro{
+  background-color: #a3a377;
+  color: white;
+  text-align: center;
+  font-size: 2em;
 }

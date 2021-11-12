@@ -40,17 +40,17 @@ class Recipes extends React.Component {
     ////////// Recipes 
     mapRecipes = (r) => {
         return (
-                    <div className="col-sm my-2" key={r.id}>
-                      <div className="card col-sm" style={{width: "18rem", "borderRadius": "5%" }}>
+                    <div className="col-sm my-3" key={r.id}>
+                      <div className="card p-2 bg-light col-sm justify-content-center" style={{width: "18rem", "borderRadius": "5%" }}>
                         {/* <a href={props.image.mainUrl}> */}
-                        <img src={r.image} className="card-img-top img-responsive" alt="..." style={{"borderRadius": "5%" }} />
-                        <div className="card-body" style={{"textAlign":"center"}}>
-                            <p>{r.name}</p>
-                            <button type="button" className="btn btn-primary" id={r.id} onClick={this.onSelect}>Show Recipe</button>
+                        <img src={r.image} className="card-img-top img-responsive recipe" alt="..." style={{"borderRadius": "5%" }} />
+                        <div className="card-body text-light justify-items-center recipeNameSmall mt-2" style={{"textAlign":"center"}}>
+                            <h2 class="text-light">{r.name}</h2>
+                            <button type="button" className="button" id={r.id} onClick={this.onSelect}>Show Recipe</button>
                         </div>
                       </div>
                     </div> 
-                             
+
         )
     }
     onGetRecipesSuccess = (result) => {
@@ -137,8 +137,9 @@ class Recipes extends React.Component {
 //////////////////// render ///////////////////
     render = () => {
         return (      
+        
         <div>
-            <select class="form-select" aria-label="Default select example" style={{width: "25rem" }} onChange={this.handleChange}>
+            <select class="form-select bar m-5 justify-content-center" aria-label="Default select example" style={{width: "25rem" }} onChange={this.handleChange}>
             <option selected></option>
             {this.state.products}
             </select>
@@ -148,9 +149,13 @@ class Recipes extends React.Component {
             
             </div>
           </div>
-          <div className="container">
+          <div className="container bg-light m-5 justify-items-center">
+                <div className="row">
+                    <div className="col-12 intro p-5 w-80">
+                        <h3>WHATS FOR DINNER?</h3>                    </div>
+                </div>
               <div className="row">
-              <div>{this.state.recipe}</div>
+                <div className="col-12">{this.state.recipe}</div>
               </div>
           </div>
           
